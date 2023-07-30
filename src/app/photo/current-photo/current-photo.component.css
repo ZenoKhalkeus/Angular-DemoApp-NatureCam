@@ -1,0 +1,215 @@
+
+.middle{
+    margin-left: 30%;
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* IMG POSTS */
+
+.img-container{
+    width: 95%;
+    background-color: rgb(253, 253, 248);
+    border: 5px solid rgb(219, 211, 211);
+    border-radius: 5%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+
+.img-container:last-child{
+    margin-bottom: 8%;
+}
+
+.img-container a img{
+    width: 510px;
+    height: 360px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 8%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#vertical{
+    height: 510px;
+    width: 400px;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.summary-content{
+    font-family: "Victor Mono";
+    margin-left: 5%;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 5%;
+}
+
+
+.solo-grouped-container{
+    margin-top: 17%;
+}
+
+
+.location{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    position: relative;
+    left: 60%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.solo-location{
+    top: 5px;
+    left: 5%
+}
+
+.likes{
+    position: relative;
+    left: 42%;
+    font-size: 24px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.fa-heart{
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.fa-heart:hover{
+    color: rgb(163, 62, 124);
+}
+
+
+.img-solo{
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 0.5%;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+
+.solo-vertical{
+    margin-left: 20%;
+    height: 500px;
+    width: 360px;
+}
+
+.img-solo:hover{
+    position: relative;
+    transition: 200ms;
+   transform: scale(1.9) translate(5%, -1%) ;
+   -webkit-box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+-moz-box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+   z-index: 1000;
+}
+
+.solo-vertical:hover{
+    position: relative;
+    transition: 200ms;
+   transform: scale(1.8) translate(1%, -3%) ;
+   -webkit-box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+-moz-box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+box-shadow: 0px 9px 85px 0px rgba(77,86,112,1);
+   z-index: 1000;
+}
+
+.like-btn{
+    font-size: 20px;
+    border: none;
+    background: none;
+}
+
+ .buttons .btn-delete, .buttons .btn-edit{
+    width: 30%;
+    height: 40px;
+    margin: 8px;
+    margin-left: 10%;
+    margin-right: auto;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+
+.btn-edit a{
+    text-decoration: none;
+}
+
+.buttons .btn-like{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.buttons .btn-like:hover{
+    background-color: #449c61
+}
+
+.buttons .btn-delete{
+    background-color: #c45454;
+    border-color: #b44a4a;
+}
+
+.buttons .btn-delete:hover{
+    background-color: #973834
+}
+
+.buttons .btn-edit{
+    background-color: #13aff0;
+    border-color: #0e9fdc;
+}
+
+.buttons .btn-edit:hover{
+    background-color: #1243c9
+}
+
+.right{
+    width: 20%;
+    position: fixed;
+    right: 20%;
+    top: 1%;
+}
+
+/* ADS */
+
+.right p{
+    z-index: 1;
+    font-size: large;
+    font-size: 42px;
+    margin-left: 55%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ad img{
+    z-index: 1;
+    margin-left: 40%;
+    margin-bottom: 5%;
+    width: 400px;
+    height: 360px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+  
