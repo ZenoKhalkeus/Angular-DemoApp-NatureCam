@@ -11,16 +11,16 @@
           </div>
 
           <!-- Logged-in users -->
-          <div class="user">
+          <div class="user" *ngIf="this.authenticated.isLoggedIn">
             <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload</a>
             <a href="#"><i class="fa-solid fa-user"></i>Profile</a>
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+            <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
           </div>
 
           <!-- Guest users -->
-          <div class="guest">
-            <a href="/login.html"><i class="fa-solid fa-address-card fa-bounce"></i>Login</a>
-            <a href="/register.html"><i class="fa-solid fa-right-to-bracket"></i>Register</a>
+          <div class="guest" *ngIf="!this.authenticated.isLoggedIn">
+            <a routerLink="/auth/login"><i class="fa-solid fa-address-card fa-bounce"></i>Login</a>
+            <a routerLink="/auth/register"><i class="fa-solid fa-right-to-bracket"></i>Register</a>
           </div>
         </nav>
       </header>

@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { PhotoModule } from './photo/photo.module';
 import { SharedModule } from './shared/shared.module';
 import { AdsComponent } from './ads/ads.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+ 
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AdsComponent } from './ads/ads.component';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     PhotoModule,
     SharedModule
