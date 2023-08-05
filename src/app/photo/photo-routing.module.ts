@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
 import { CurrentPhotoComponent } from './current-photo/current-photo.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -10,13 +11,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        pathMatch: 'full',
         component: HomeComponent,
+      },
+      {
+        path: 'search',
+        component: SearchComponent,
       },
       {
         path: ':photoId',
         component: CurrentPhotoComponent,
-      },
+      }
     ],
   }
 ];

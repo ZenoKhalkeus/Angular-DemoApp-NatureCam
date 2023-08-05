@@ -1,0 +1,51 @@
+<div class="middle">
+    <div class="grouped-container">
+        <div *ngFor="let photo of photosList" class="img-container">
+            <div class="title-content">
+                <p class="title">{{photo.title}}</p>
+            </div>
+            <div class="summary-content">
+                {{photo._createdOn | timePipe}}
+            </div>
+            <ng-container *ngIf="photo.orientation === vertical" >
+                <a routerLink="/photos/{{photo._id}}">
+                <img  src={{photo.imageUrl}} id="vertical" alt="placeholderimg">
+            </a>
+            </ng-container>
+            <ng-container *ngIf="photo.orientation === horizontal" >
+                <a routerLink="/photos/{{photo._id}}">
+                <img  src={{photo.imageUrl}} alt="placeholderimg">
+            </a>
+
+            </ng-container>
+            
+        </div>
+        <ng-container *ngIf="!unsearched">
+            <div *ngIf="photosList.length === 0" class="lack-content">No Content found</div>
+        </ng-container>
+        <div *ngIf="unsearched" class="unsearched">Search for any photo by title <i class="fa-solid fa-square-up-right"></i></div>
+    </div>
+</div>
+
+<div class="right">
+    <section id="search">
+        
+        <div class="class-form" >
+            <form class="search-form" #form="ngForm" (ngSubmit)="search(form)">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              ngModel
+              #inputSearch="ngModel"
+              required
+            />
+            <ng-container *ngIf="inputSearch.touched">
+                <p class="error-field" *ngIf="inputSearch.errors?.['required']">Search field cannot be empty</p>
+            </ng-container>
+            <button type="submit" >Search</button>
+          </form>
+        </div>
+    </section>
+</div>

@@ -21,6 +21,11 @@ export class ApiService {
     return this.http.get<Photo>(`${apiUrl}/${id}`)
   }
 
+  search(query:string){
+    const { apiUrl } = environment
+    return this.http.get<Photo[]>(`${apiUrl}?where=title%20LIKE%20%22${query}%22&sortBy=_createdOn%20desc`)
+  }
+
   saveLocalData(key: string, value: string): void{
     localStorage.setItem(key, value)
   }

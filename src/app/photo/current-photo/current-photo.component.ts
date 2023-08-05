@@ -25,10 +25,9 @@ export class CurrentPhotoComponent implements OnInit {
 
   fetchPhoto(): void{
     const id = this.activatedRoute.snapshot.params['photoId']
-
+    
     this.apiService.getPhoto(id).subscribe((photo)=>{
       this.photo = photo
-      //console.log(this.photo.title)
     })
 
   }
