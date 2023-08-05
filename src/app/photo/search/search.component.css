@@ -57,7 +57,7 @@
     margin-right: 5%;
 }
 
-.unsearched, .lack-content{
+.unsearched, .lack-content, .loading{
     background: white;
     border-radius: 10px;
     height: 100px;

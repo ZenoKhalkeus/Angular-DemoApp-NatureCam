@@ -14,6 +14,7 @@ export class SearchComponent {
 
   vertical = "vertical"
   horizontal = "horizontal"
+  isLoading = false
   
   photosList: Photo[] = []
   constructor(
@@ -26,13 +27,17 @@ export class SearchComponent {
       return
     }
 
+    this.isLoading = true
+
     const value: {search: string} = form.value
     this.apiService.search(value.search).subscribe({
       next: (photos) =>{
         this.photosList = photos
         this.unsearched = false
+        this.isLoading = false
       },
       error: (err) =>{
+        this.isLoading = false
         console.error(`Error ${err}`)
       }
     })

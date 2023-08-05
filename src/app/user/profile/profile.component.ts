@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
 
   vertical = "vertical"
   horizontal = "horizontal"
+
+  isLoading = false
   
   photosList: Photo[] = []
   constructor(
@@ -22,6 +24,7 @@ export class ProfileComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
+    this.isLoading = true
     this.result = this.email?.indexOf("@")
     this.profileName = this.email?.slice(0,this.result)
 
@@ -29,9 +32,11 @@ export class ProfileComponent implements OnInit {
       next: (photos) =>{
         
         this.photosList = photos
+        this.isLoading = false
       },
       error: (err) =>{
         console.error(`Error ${err}`)
+        this.isLoading = false
       }
     })
   }

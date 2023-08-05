@@ -56,7 +56,7 @@
     margin-right: 5%;
 }
 
-.lack-content{
+.lack-content, .loading{
     background: white;
     border-radius: 10px;
     height: 100px;
@@ -96,8 +96,10 @@
     color: rgb(37, 32, 109);
     border-radius: 20px;
     border: 5px solid rgb(158, 175, 171);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-box-shadow: 11px 6px 5px 0px rgba(141,164,179,1);
+    -moz-box-shadow: 11px 6px 5px 0px rgba(141,164,179,1);
+    box-shadow: 11px 6px 5px 0px rgba(141,164,179,1);
 }
 
 .fa-user{

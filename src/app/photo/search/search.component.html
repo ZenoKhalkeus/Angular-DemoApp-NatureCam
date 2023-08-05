@@ -1,25 +1,31 @@
 <div class="middle">
     <div class="grouped-container">
-        <div *ngFor="let photo of photosList" class="img-container">
-            <div class="title-content">
-                <p class="title">{{photo.title}}</p>
+        <ng-container *ngIf="isLoading">
+            <div *ngIf="!unsearched" class="loading">Loading ...</div>
+        </ng-container>
+        
+        <ng-container *ngIf="!isLoading">
+            <div *ngFor="let photo of photosList" class="img-container">
+                <div class="title-content">
+                    <p class="title">{{photo.title}}</p>
+                </div>
+                <div class="summary-content">
+                    {{photo._createdOn | timePipe}}
+                </div>
+                <ng-container *ngIf="photo.orientation === vertical" >
+                    <a routerLink="/photos/{{photo._id}}">
+                    <img  src={{photo.imageUrl}} id="vertical" alt="placeholderimg">
+                </a>
+                </ng-container>
+                <ng-container *ngIf="photo.orientation === horizontal" >
+                    <a routerLink="/photos/{{photo._id}}">
+                    <img  src={{photo.imageUrl}} alt="placeholderimg">
+                </a>
+    
+                </ng-container>
+                
             </div>
-            <div class="summary-content">
-                {{photo._createdOn | timePipe}}
-            </div>
-            <ng-container *ngIf="photo.orientation === vertical" >
-                <a routerLink="/photos/{{photo._id}}">
-                <img  src={{photo.imageUrl}} id="vertical" alt="placeholderimg">
-            </a>
-            </ng-container>
-            <ng-container *ngIf="photo.orientation === horizontal" >
-                <a routerLink="/photos/{{photo._id}}">
-                <img  src={{photo.imageUrl}} alt="placeholderimg">
-            </a>
-
-            </ng-container>
-            
-        </div>
+        </ng-container>
         <ng-container *ngIf="!unsearched">
             <div *ngIf="photosList.length === 0" class="lack-content">No Content found</div>
         </ng-container>
