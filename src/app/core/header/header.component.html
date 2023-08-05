@@ -13,14 +13,14 @@
           <!-- Logged-in users -->
           <div class="user" *ngIf="this.authenticated.isLoggedIn">
             <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload</a>
-            <a href="#"><i class="fa-solid fa-user"></i>Profile</a>
+            <a href="/user/profile"><i class="fa-solid fa-user"></i>Profile</a>
             <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
           </div>
 
           <!-- Guest users -->
           <div class="guest" *ngIf="!this.authenticated.isLoggedIn">
-            <a routerLink="/auth/login"><i class="fa-solid fa-address-card fa-bounce"></i>Login</a>
-            <a routerLink="/auth/register"><i class="fa-solid fa-right-to-bracket"></i>Register</a>
+            <a routerLink="/user/login"><i class="fa-solid fa-address-card fa-bounce"></i>Login</a>
+            <a routerLink="/user/register"><i class="fa-solid fa-right-to-bracket"></i>Register</a>
           </div>
         </nav>
       </header>
