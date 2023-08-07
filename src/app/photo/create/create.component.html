@@ -1,0 +1,64 @@
+<section id="create">
+    <div class="form create" >
+      <h2>Add an artwork</h2>
+      <form class="create-form" #form="ngForm" (ngSubmit)="create(form)">
+        <p class="form-info">Title</p>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Balkan mountain view"
+          ngModel
+            #inputTitle = "ngModel"
+            required
+        />
+        <p class="form-info">Summary</p>
+        <input
+          type="text"
+          name="summary"
+          id="summary"
+          placeholder="Short summary for the photo"
+          ngModel
+            #inputSummary = "ngModel"
+            required
+        />
+        <p class="form-info">Image Url</p>
+        <input
+          type="text"
+          name="imageUrl"
+          id="img-background"
+          placeholder="www.lorem.lorem.png"
+          ngModel
+            #inputImageUrl = "ngModel"
+            required
+          
+        />
+        <p class="form-info">Location</p>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="Where the photo is"
+          ngModel
+            #inputLocation = "ngModel"
+            required
+          
+        />
+        <p class="form-info">Orientation</p>
+        <select id="orientation" 
+            name="orientation"
+            ngModel
+            #inputOrientation= "ngModel"
+            required>
+            <option value="vertical">vertical</option>
+            <option value="horizontal">horizontal</option>
+          </select>
+        <p class="error-field">
+            <ng-container *ngIf="inputTitle.touched && inputSummary.touched && inputImageUrl.touched && inputLocation.touched && inputOrientation.touched">
+                <p *ngIf="inputTitle.errors?.['required'] || inputSummary.errors?.['required'] || inputImageUrl.errors?.['required'] || inputLocation.errors?.['required'] || inputOrientation.errors?.['required']">All fields are required</p>
+            </ng-container>
+        </p>
+        <button type="submit" >Upload</button>
+      </form>
+    </div>
+</section>

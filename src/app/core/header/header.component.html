@@ -12,7 +12,7 @@
 
           <!-- Logged-in users -->
           <div class="user" *ngIf="this.authenticated.isLoggedIn">
-            <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload</a>
+            <a href="/photos/create"><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload</a>
             <a href="/user/profile"><i class="fa-solid fa-user"></i>Profile</a>
             <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
           </div>

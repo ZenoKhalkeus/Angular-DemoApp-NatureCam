@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from 'src/app/types/photo';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-current-photo',
@@ -15,7 +16,8 @@ export class CurrentPhotoComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ){}
 
   ngOnInit(): void{
@@ -30,6 +32,26 @@ export class CurrentPhotoComponent implements OnInit {
       this.photo = photo
     })
 
+  }
+
+  delete(){
+    const id = this.activatedRoute.snapshot.params['photoId']
+    const result = confirm("Are you sure you want to delete your photo")
+    if(result){
+      this.apiService.delete(id).subscribe({
+        next: (response)=>{
+          alert("Successfully deleted")
+          this.router.navigate(['/photos'])
+        },
+        error: (error)=>{
+          if(error.status===403){
+            alert("Unauthorized deletion")
+          }else{
+            alert("Server is down, please try again later!")
+          }
+        }
+      })
+    }
   }
   
 }

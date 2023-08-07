@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Photo } from './types/photo';
 import { Observable } from 'rxjs'
@@ -29,6 +29,32 @@ export class ApiService {
   search(query:string){
     const { apiUrl } = environment
     return this.http.get<Photo[]>(`${apiUrl}?where=title%20LIKE%20%22${query}%22&sortBy=_createdOn%20desc`)
+  }
+
+  create(data: any): Observable<any>{
+    const { apiUrl } = environment
+    
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('X-Authorization', '' + localStorage.getItem('accessToken'))
+
+      return this.http.post(`${apiUrl}`, data, {
+        headers: headers,
+      })
+  }
+
+  delete(id: string): Observable<any>{
+    const { apiUrl } = environment
+    
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('X-Authorization', '' + localStorage.getItem('accessToken'))
+
+      return this.http.delete(`${apiUrl}/${id}`, {
+        headers: headers,
+      })
+
+
   }
 
   saveLocalData(key: string, value: string): void{
