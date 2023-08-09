@@ -5,6 +5,7 @@ export interface Photo {
     title: string;
     summary: string;
     imageUrl: string;
+    location: string;
     orientation: string;
     _createdOn: number;
     

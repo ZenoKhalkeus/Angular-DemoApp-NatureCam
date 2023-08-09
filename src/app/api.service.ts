@@ -69,6 +69,34 @@ export class ApiService {
 
   }
 
+  // Likes and functionality
+
+  like(id: string): Observable<any>{
+
+    const { apiLikeUrl } = environment
+
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('X-Authorization', '' + localStorage.getItem('accessToken'))
+    return this.http.post(`${apiLikeUrl}`, {id},{
+      headers: headers,
+    })
+  }
+
+  getNumberOfLikes(id: string): Observable<any>{
+    const { apiLikeUrl } = environment
+
+    return this.http.get(`${apiLikeUrl}?where=id%3D%22${id}%22&distinct=_ownerId&count`)
+  }
+
+  getOwnLike(id:string, userId: string): Observable<any>{
+    const { apiLikeUrl } = environment
+
+    return this.http.get(`${apiLikeUrl}?where=id%3D%22${id}%22%20and%20_ownerId%3D%22${userId}%22&count`)
+  }
+
+  // USER API
+
   saveLocalData(key: string, value: string): void{
     localStorage.setItem(key, value)
   }
