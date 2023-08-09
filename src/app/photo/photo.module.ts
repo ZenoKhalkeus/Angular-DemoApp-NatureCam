@@ -5,7 +5,8 @@ import { PhotoRoutingModule } from './photo-routing.module';
 import { SearchComponent } from './search/search.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CreateComponent } from './create/create.component'
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component'
 
 
 
@@ -14,7 +15,8 @@ import { CreateComponent } from './create/create.component'
   declarations: [
     CurrentPhotoComponent,
     SearchComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     CommonModule, PhotoRoutingModule, SharedModule,

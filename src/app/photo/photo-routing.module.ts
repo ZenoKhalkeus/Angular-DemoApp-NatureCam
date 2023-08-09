@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { CurrentPhotoComponent } from './current-photo/current-photo.component';
 import { SearchComponent } from './search/search.component';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'create',
         component: CreateComponent,
+      },
+      {
+        path: 'edit/:photoId',
+        component: EditComponent,
       },
       {
         path: ':photoId',

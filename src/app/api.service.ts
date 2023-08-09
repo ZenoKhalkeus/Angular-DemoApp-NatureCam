@@ -43,6 +43,18 @@ export class ApiService {
       })
   }
 
+  edit(data: any, id: string): Observable<any>{
+    const { apiUrl } = environment
+    
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('X-Authorization', '' + localStorage.getItem('accessToken'))
+
+      return this.http.put(`${apiUrl}/${id}`, data, {
+        headers: headers,
+      })
+  }
+
   delete(id: string): Observable<any>{
     const { apiUrl } = environment
     

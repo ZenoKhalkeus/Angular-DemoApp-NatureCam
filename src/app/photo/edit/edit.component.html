@@ -1,14 +1,14 @@
 <section id="create">
     <div class="form create" >
-      <h2>Upload your photo</h2>
-      <form class="create-form" #form="ngForm" (ngSubmit)="create(form)">
+      <h2>Edit your photo</h2>
+      <form class="create-form" #form="ngForm" (ngSubmit)="edit(form)">
         <p class="form-info">Title</p>
         <input
           type="text"
           name="title"
           id="title"
           placeholder="Balkan mountain view"
-          ngModel
+          [(ngModel)]="photo.title"
             #inputTitle = "ngModel"
             required
         />
@@ -18,7 +18,7 @@
           name="summary"
           id="summary"
           placeholder="Short summary for the photo"
-          ngModel
+          [(ngModel)]="photo.summary"
             #inputSummary = "ngModel"
             required
         />
@@ -28,7 +28,7 @@
           name="imageUrl"
           id="img-background"
           placeholder="www.lorem.lorem.png"
-          ngModel
+          [(ngModel)]="photo.imageUrl"
             #inputImageUrl = "ngModel"
             required
           
@@ -39,7 +39,7 @@
           name="location"
           id="location"
           placeholder="Where the photo is"
-          ngModel
+          [(ngModel)]="photo.location"
             #inputLocation = "ngModel"
             required
           
@@ -47,18 +47,18 @@
         <p class="form-info">Orientation</p>
         <select id="orientation" 
             name="orientation"
-            ngModel
+            [(ngModel)]="photo.orientation"
             #inputOrientation= "ngModel"
             required>
             <option value="vertical" >vertical</option>
             <option value="horizontal">horizontal</option>
           </select>
         <p class="error-field">
-            <ng-container *ngIf="inputTitle.touched && inputSummary.touched && inputImageUrl.touched && inputLocation.touched && inputOrientation.touched">
+            <ng-container *ngIf="inputTitle.touched || inputSummary.touched || inputImageUrl.touched || inputLocation.touched || inputOrientation.touched">
                 <p *ngIf="inputTitle.errors?.['required'] || inputSummary.errors?.['required'] || inputImageUrl.errors?.['required'] || inputLocation.errors?.['required'] || inputOrientation.errors?.['required']">All fields are required</p>
             </ng-container>
         </p>
-        <button type="submit" >Upload</button>
+        <button type="submit" >Edit</button>
       </form>
     </div>
 </section>
