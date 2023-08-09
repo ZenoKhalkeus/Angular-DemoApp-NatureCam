@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
-import { TestComponent } from './test/test.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PhotoModule } from './photo/photo.module';
@@ -18,7 +18,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   declarations: [
     AppComponent,
     HomeComponent,
-    TestComponent,
     AdsComponent
   ],
   imports: [
