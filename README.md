@@ -1,4 +1,49 @@
-# NatureCam
+
+# SoftUni Project Defense Angular App Demo
+
+# Nature Cam
+
+This is a Project for SoftUni's Project Defense, using Angular, HTML and CSS and SoftUni's practice server.
+
+Everything's for learning purposes, no copyright infringement intended
+
+## Functionalities
+
+Guest: 
+* view Dashboard
+* view Photo Details
+* Search
+* Login
+* Register
+
+User:
+
+* View Own Collection
+* Edit and Delete (If Owner of Photo)
+* Like
+* Create Photo
+
+# Some Site Images
+
+## Home
+
+![](https://i.imgur.com/weQ49V9.png)
+
+## Register
+
+![](https://i.imgur.com/x6HGTex.png)
+
+## Search
+
+![](https://i.imgur.com/7fIyDwG.png)
+
+---
+
+![](https://i.imgur.com/icLfBXR.png)
+
+## Details
+
+![](https://i.imgur.com/f9e1cx6.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 

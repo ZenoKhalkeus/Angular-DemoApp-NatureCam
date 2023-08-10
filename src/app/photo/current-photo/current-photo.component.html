@@ -10,12 +10,12 @@
             </div>
             <ng-container *ngIf="photo.orientation === vertical" >
                 <img id="solo-vertical vertical" class="img-solo solo-vertical" src={{photo.imageUrl}} alt="placeholderimg">
-                        <p class="location solo-location">Location: Somewhere in Nevada</p>
+                        <p class="location solo-location">Location: {{photo.location}}</p>
             
             </ng-container>
             <ng-container *ngIf="photo.orientation === horizontal" >
                 <img class="img-solo" src={{photo.imageUrl}} alt="placeholderimg">
-                        <p class="location">Location: Asian forest</p>
+                        <p class="location">Location: {{photo.location}}</p>
                     </ng-container>
             <ng-container *ngIf="this.authenticated.isLoggedIn && !this.personalLike">
                 <div class="likes">{{this.likes}}<button class="like-btn" (click)="like()"><i class="fa-regular fa-heart"></i></button></div>
